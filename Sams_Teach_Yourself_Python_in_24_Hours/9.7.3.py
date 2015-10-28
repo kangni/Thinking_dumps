@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # #  Author:
 # #  2015/10/25 PM 4:00
-
+#todo:not perfact
 def main():
     states = dict()
     while True:
