@@ -1,0 +1,1 @@
+ALTER TABLE Address_book ADD COLUMN zip_code CHAR(8) NOT NULL;
