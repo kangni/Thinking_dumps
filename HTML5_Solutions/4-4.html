@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Adding a slider to your form with the range input type</title>
+</head>
+<body>
+<form id="myFrom">
+  <fieldset>
+    <legend>Adding a slider to your form with the range input type</legend>
+
+    <label>Choose your magic number:</label>
+    <input type="range" min="1" max="10" step="1" value="6"
+    onchange="myOutput.value=this.value" />
+    <br/>
+
+    <label>This is the selected value:</label>
+    <output name="myOutput"> 6 </output>
+
+  </fieldset>
+</form>
+</body>
+</html>

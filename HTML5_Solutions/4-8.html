@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Creating custom input types using regular expressions</title>
+</head>
+<body>
+
+<form id="myFrom">
+  <fieldset>
+    <legend>Creating custom input types using regular expressions</legend>
+
+    <label>Insert a valid American Zip code:
+    <input type="text" name="ssn"
+    pattern="(\d{5}([\-]\d{4})?)"
+    title="Zip code" />
+    </label>
+
+    <p>
+      <input type="submit" value="Check Zip code"/>
+    </p>
+  </fieldset>
+</form>
+</body>
+</html>
