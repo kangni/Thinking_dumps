@@ -1,7 +1,7 @@
 Python Algorithms
 
-*TODO Chapter:1 Introduction
-*TODO Chapter:2 The Basics
-**TODO Asymptotic Notatiom
-**TODO Implementing Graphs and Trees
-**TODO Beware of Black Boxes
+* DONE Chapter:1 Introduction
+* TODO Chapter:2 The Basics
+** TODO Asymptotic Notatiom
+** TODO Implementing Graphs and Trees
+** TODO Beware of Black Boxes
