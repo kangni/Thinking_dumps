@@ -1,3 +1,7 @@
 All the Project based on "Flask Web Development:Developing Web Applications with Python"
 
-20160115 Finish the Chapter 2
+** DONE Chapter 2
+20160115
+
+** DONE Chapter 3
+20160116
