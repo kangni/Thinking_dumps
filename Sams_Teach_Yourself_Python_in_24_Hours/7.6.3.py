@@ -14,6 +14,3 @@ while True:
     value = float(value)
     Total = Total + value    
 
-print "*****\nTotal: $ {}".format(Total)
-    
-    
