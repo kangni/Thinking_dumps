@@ -1,0 +1,8 @@
+* Data Structures and Algorithms in Python
+
++ [-] 7 Linked Lists [16%]
+  + [X] 7.1 Singly Linked Lists 
+  + [ ] 7.2 Circularly Linked Lists
+  + [ ] 7.3 Doubly Linked Lists
+  + [ ] 7.4 The Positional List ADT
+  + [ ] 7.5 Sorting a Positional List
