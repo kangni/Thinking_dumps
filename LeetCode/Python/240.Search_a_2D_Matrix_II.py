@@ -21,7 +21,12 @@ Given target = 20, return false.
 
 
 class Solution:
-    def searchMatrix(matrix, target):
+    def searchMatrix(self, matrix, target):
+        """
+        :type matrix: List[List[int]]
+        :type target: int
+        :rtype: bool
+        """
         m = len(matrix)
         n = len(matrix[0])
         if m == 0 or n == 0:
@@ -43,4 +48,5 @@ if __name__ == '__main__':
               [3, 6, 9, 16, 22],
               [10, 13, 14, 17, 24],
               [18, 21, 23, 26, 30]]
-    print(Solution.searchMatrix(matrix, 17))
+    result = Solution().searchMatrix(matrix, 17)
+    print(result)
