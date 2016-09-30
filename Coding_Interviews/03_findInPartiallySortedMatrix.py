@@ -1,4 +1,8 @@
+# coding: utf-8
+
 '''
+二维数组中的查找
+
 Write an efficient algorithm that searches for a value in an m x n matrix.
 This matrix has the following properties:
 
