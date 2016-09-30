@@ -10,12 +10,13 @@
 
 def permutation(result, strs, str_list):
     if len(str_list) == 1:
-        result.append(strs+str_list[0])
+        result.append(strs + str_list[0])
     else:
         for tmp_str in str_list:
             tmp_list = str_list[:]
             tmp_list.remove(tmp_str)
-            permutation(result, strs+tmp_str, tmp_list)
+            permutation(result, strs + tmp_str, tmp_list)
+
 
 def strPermutation(data):
     list_input = list(data)
