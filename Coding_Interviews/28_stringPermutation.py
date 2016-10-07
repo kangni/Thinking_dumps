@@ -1,11 +1,9 @@
-# coding: utf-8
+# -*- coding: utf-8 -*-
 
-'''
-输入一个字符串，打印出该字符串中字符的所有排列
+# 输入一个字符串，打印出该字符串中字符的所有排列
 
-例如输入字符串 abc
-打印出 abc, acb, bac, bca, cab, cba
-'''
+# 例如输入字符串 abc
+# 打印出 abc, acb, bac, bca, cab, cba
 
 
 def permutation(result, strs, str_list):
@@ -18,13 +16,12 @@ def permutation(result, strs, str_list):
             permutation(result, strs + tmp_str, tmp_list)
 
 
-def strPermutation(data):
+def str_permutation(data):
     list_input = list(data)
     result = []
     permutation(result, '', list_input)
     pp = ','.join(result)
     print(pp)
 
-
 if __name__ == '__main__':
-    strPermutation("a")
+    str_permutation("abc")
