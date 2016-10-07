@@ -1,4 +1,4 @@
-# coding: utf-8
+# -*- coding: utf-8 -*-
 
 '''
 二维数组中的查找
@@ -25,7 +25,7 @@ Given target = 20, return false.
 
 
 class Solution:
-    def searchMatrix(self, matrix, target):
+    def search_matrix(self, matrix, target):
         """
         :type matrix: List[List[int]]
         :type target: int
@@ -52,5 +52,5 @@ if __name__ == '__main__':
               [3, 6, 9, 16, 22],
               [10, 13, 14, 17, 24],
               [18, 21, 23, 26, 30]]
-    result = Solution().searchMatrix(matrix, 17)
+    result = Solution().search_matrix(matrix, 17)
     print(result)

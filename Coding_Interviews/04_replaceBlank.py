@@ -8,6 +8,7 @@
 输出"We%20are%20happy."
 '''
 
+
 class Solution:
-    def replaceBlank(self, s):
+    def replace_blank(self, s):
         return s.replace(" ", "%20")
