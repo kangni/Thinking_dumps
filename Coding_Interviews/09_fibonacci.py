@@ -1,22 +1,27 @@
-# coding: utf-8
+# -*- coding: utf-8 -*-
 
-'''
-斐波那契问题
+# 斐波那契问题
 
-输入 n，求斐波那契数列的第 n 项的值
-'''
+# 输入 n，求斐波那契数列的第 n 项的值
 
 
 def fibonacci(n):
     a, b = 0, 1
     if n < 2:
         return n
-    for i in range(n):
+    for i in range(0, n-1):
         a, b = b, a+b
     return b
 
+if __name__ == '__main__':
+    print(fibonacci(0))
+    print(fibonacci(1))
+    print(fibonacci(2))
+    print(fibonacci(3))
+    print(fibonacci(4))
+
 '''
-# 台阶问题 
+# 台阶问题
 一只青蛙一次可以跳上 1 级或 2 级台阶，求跳上 n 阶总共有多少种跳法
 
 fib = lambda n:n if n<2 else fib(n-1)+fib(n-2)
