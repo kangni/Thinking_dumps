@@ -10,7 +10,9 @@ class ListNode(object):
 
     def __repr__(self):
         if self:
-            return "{} -> {}".format(self.val, repr(self.next))
+            return "{}".format(self.val)
+            # 输出反转后链表结构
+            # return "{} -> {}".format(self.val, repr(self.next))
 
 
 class Solution(object):
@@ -30,9 +32,9 @@ class Solution(object):
 
 if __name__ == '__main__':
     head = ListNode(None)
-    #    head = ListNode(1)
-    #    head.next = ListNode(2)
-    #    head.next.next = ListNode(3)
-    #    head.next.next.next = ListNode(4)
-    #    head.next.next.next.next = ListNode(5)
+    # head = ListNode(1)
+    # head.next = ListNode(2)
+    # head.next.next = ListNode(3)
+    # head.next.next.next = ListNode(4)
+    # head.next.next.next.next = ListNode(5)
     print(Solution().reverse_list(head))
