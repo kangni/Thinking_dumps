@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+# 二叉树的镜像
+# 完成一个函数，输入一个二叉树，该函数输出它的镜像
+
 
 class Node(object):
     def __init__(self, data, left=None, right=None):
@@ -8,15 +11,15 @@ class Node(object):
         self.right = right
 
 
-def mirrorrecursively(p):
+def mirror_recursively(p):
     if p is None:
         return 0
     elif p.left and p.right:
         p.left, p.right = p.right, p.left
         if p.left:
-            mirrorrecursively(p.left)
+            mirror_recursively(p.left)
         if p.right:
-            mirrorrecursively(p.right)
+            mirror_recursively(p.right)
     return p
 
 
@@ -34,4 +37,4 @@ if __name__ == '__main__':
     tree = Node(8, Node(6, Node(5), Node(7)), Node(10, Node(9), Node(11)))
     lookup(tree)
     print('=================')
-    lookup(mirrorrecursively(tree))
+    lookup(mirror_recursively(tree))
