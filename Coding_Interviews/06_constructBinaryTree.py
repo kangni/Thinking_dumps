@@ -1,16 +1,20 @@
-# coding: utf-8
+# -*- coding: utf-8 -*-
 
-'''
-重建二叉树
 
-输入某二叉树的前序和中序遍历的结果，请重建出该二叉树
+# 重建二叉树
 
-假设输入的前序和中序遍历的结果都不含重复的数字
+# 输入某二叉树的前序和中序遍历的结果，请重建出该二叉树
+# 假设输入的前序和中序遍历的结果都不含重复的数字
 
-例如：
-前序遍历序列{1, 2, 4, 7, 3, 5, 6, 8}
-中序遍历序列{4, 7, 2, 1, 5, 3, 8, 6}
-'''
+# 例如：
+# 前序遍历序列{1, 2, 4, 7, 3, 5, 6, 8}
+# 中序遍历序列{4, 7, 2, 1, 5, 3, 8, 6}
+
+class Node(object):
+    def __init__(self, data, left=None, right=None):
+        self.data = data
+        self.left = left
+        self.right = right
 
 
 def rebuild(pre, center):
@@ -29,3 +33,8 @@ def deep(root):
     deep(root.left)
     deep(root.right)
     print(root.data)
+
+if __name__ == '__main__':
+    pre = [1, 2, 4, 7, 3, 5, 6, 8]
+    center = [4, 7, 2, 1, 5, 3, 8, 6]
+    deep(rebuild(pre, center))
