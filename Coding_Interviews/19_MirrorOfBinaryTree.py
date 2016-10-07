@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# 二叉树的镜像
-# 完成一个函数，输入一个二叉树，该函数输出它的镜像
+# 从上往下打印二叉树
+
+# 从上往下打印二叉树的每个结点，同一层的结点按照从左到右的顺序打印
 
 
 class Node(object):
@@ -11,30 +12,42 @@ class Node(object):
         self.right = right
 
 
-def mirror_recursively(p):
-    if p is None:
-        return 0
-    elif p.left and p.right:
-        p.left, p.right = p.right, p.left
-        if p.left:
-            mirror_recursively(p.left)
-        if p.right:
-            mirror_recursively(p.right)
-    return p
-
-
+# Way 1
 def lookup(root):
     stack = [root]
     while stack:
         cur = stack.pop(0)
-        print('层次遍历：%s' % cur.data)
+        print(cur.data)
         if cur.left:
             stack.append(cur.left)
         if cur.right:
             stack.append(cur.right)
 
 if __name__ == '__main__':
-    tree = Node(8, Node(6, Node(5), Node(7)), Node(10, Node(9), Node(11)))
-    lookup(tree)
-    print('=================')
-    lookup(mirror_recursively(tree))
+    tree = Node(5, Node(3, Node(1), Node(4)), Node(10, Node(7), Node(12)))
+    print(lookup(tree))
+
+# Way 2
+'''
+def from_top_to_bottom(root):
+    result = []
+    if not root:
+        return 0
+    queue = [root]
+    while queue:
+        n = len(queue)
+        level = []
+        for i in range(n):
+            root = queue.pop(0)
+            if root.left is not None:
+                queue.append(root.left)
+            if root.right is not None:
+                queue.append(root.right)
+            level.append(root.data)
+        result.append(level)
+    return result
+
+
+if __name__ == '__main__':
+    print(from_top_to_bottom(tree))
+'''
