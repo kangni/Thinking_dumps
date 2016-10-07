@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+# 树的子结构
+# 输入两棵二叉树A和B，判断B是不是A的子结构
+
 
 class Node(object):
     def __init__(self, data, left=None, right=None):
@@ -8,30 +11,30 @@ class Node(object):
         self.right = right
 
 
-def hassubtree(p, q):
+def has_subtree(p, q):
     result = False
     if p and q is None:
         return True
     elif p and q:
         if p.data == q.data:
-            result = doestree1havetree2(p, q)
+            result = does_tree1_have_tree2(p, q)
         if not result:
-            result = hassubtree(p.left, q)
+            result = has_subtree(p.left, q)
         if not result:
-            result = hassubtree(p.right, q)
+            result = has_subtree(p.right, q)
     return result
 
 
-def doestree1havetree2(p, q):
+def does_tree1_have_tree2(p, q):
     if q is None:
         return True
     if p is None:
         return False
     if p.data != q.data:
         return False
-    return doestree1havetree2(p.left, q.left) and doestree1havetree2(p.right, q.right)
+    return does_tree1_have_tree2(p.left, q.left) and does_tree1_have_tree2(p.right, q.right)
 
 if __name__ == '__main__':
-    tree1 = Node(8, Node(8, Node(9), Node(2, Node(4), Node(7))), Node(7))
-    tree2 = Node(8, Node(9), Node(2))
-    print(hassubtree(tree1, tree2))
+    a = Node(8, Node(8, Node(9), Node(2, Node(4), Node(7))), Node(7))
+    b = Node(8, Node(9), Node(2))
+    print(has_subtree(a, b))
