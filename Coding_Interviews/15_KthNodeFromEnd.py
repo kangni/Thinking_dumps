@@ -24,11 +24,11 @@ def kth_node_from_end(head, k):
             cur = cur.next
         else:
             return False
-    kBehind = head
+    k_behind = head
     while cur.next:
         cur = cur.next
-        kBehind = kBehind.next
-    return kBehind.val
+        k_behind = k_behind.next
+    return k_behind.val
 
 if __name__ == '__main__':
     head = ListNode(1)
@@ -37,4 +37,4 @@ if __name__ == '__main__':
     head.next.next.next = ListNode(4)
     head.next.next.next.next = ListNode(5)
     head.next.next.next.next.next = ListNode(6)
-    print(kth_node_from_end(head, 0))
+    print(kth_node_from_end(head, 1))
