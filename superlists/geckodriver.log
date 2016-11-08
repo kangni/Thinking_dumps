@@ -12,3 +12,20 @@
 1478506199230	Marionette	INFO	startBrowser 39b6cc75-e43d-e146-a026-2dadff1d67f5
 [Child 45010] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
 [Child 45010] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
+1478584770621	geckodriver	INFO	Listening on 127.0.0.1:54673
+1478584771624	mozprofile::profile	INFO	Using profile path /var/folders/wp/8r68q3c93wz73bwlpmhl6m780000gn/T/rust_mozprofile.en5QD9Jr67Rn
+1478584771625	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1478584771657	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54679
+1478584772362	Marionette	INFO	Listening on port 54679
+1478584773666	Marionette	INFO	startBrowser 59056d44-d357-1e4d-845f-54d84c4eaaff
+[Child 29912] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
+[Child 29912] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
+1478591915858	geckodriver	INFO	Listening on 127.0.0.1:55389
+1478591916861	mozprofile::profile	INFO	Using profile path /var/folders/wp/8r68q3c93wz73bwlpmhl6m780000gn/T/rust_mozprofile.XrzocnejqtVa
+1478591916862	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1478591916875	geckodriver::marionette	INFO	Connecting to Marionette on localhost:55395
+1478591917405	Marionette	INFO	Listening on port 55395
+1478591918590	Marionette	INFO	startBrowser d2a22a75-8824-fe4e-ab2f-372054b3f845
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 47715] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
+[Child 47715] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
