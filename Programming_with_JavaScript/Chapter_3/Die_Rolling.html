@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Die Rolling</title>
+	<style>div#die { font-size: 1800% }</style>
+</head>
+<body>
+    <div><input id="roller" type="button" value="Roll" /></div>
+    <div id="die"></div>
+    <script>
+	    document.getElementById("roller").onclick = function () {
+		    document.getElementById("die").innerHTML =
+				    "&#x268" + Math.floor(Math.random() * 6)+ ";";
+	    }
+    </script>
+</body>
+</html>
