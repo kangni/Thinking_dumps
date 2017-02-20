@@ -17,6 +17,6 @@ class Solution(object):
 
 
 if __name__ == '__main__':
-    l = [2, 4, 3, 6, 3, 2, 5, 5]
+    l = [2, 3, 6, 3, 2, 5, 5]
     result = Solution().single_number(l)
     print(result)
