@@ -1,4 +1,5 @@
-'''
+# -*- coding: utf-8 -*-
+"""
 Write an efficient algorithm that searches for a value in an m x n matrix.
 This matrix has the following properties:
 
@@ -17,11 +18,11 @@ Consider the following matrix:
 
 Given target = 5, return true.
 Given target = 20, return false.
-'''
+"""
 
 
 class Solution:
-    def searchMatrix(self, matrix, target):
+    def search_matrix(self, matrix, target):
         """
         :type matrix: List[List[int]]
         :type target: int
@@ -48,5 +49,5 @@ if __name__ == '__main__':
               [3, 6, 9, 16, 22],
               [10, 13, 14, 17, 24],
               [18, 21, 23, 26, 30]]
-    result = Solution().searchMatrix(matrix, 17)
+    result = Solution().search_matrix(matrix, 17)
     print(result)
