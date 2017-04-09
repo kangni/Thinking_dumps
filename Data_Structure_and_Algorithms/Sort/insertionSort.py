@@ -1,4 +1,4 @@
-def insertionSort(l):
+def insertion_sort(l):
     for i in range(1, len(l)):
         currentvalue = l[i]
         position = i
@@ -11,5 +11,5 @@ def insertionSort(l):
 
 if __name__ == '__main__':
     l = [1, 5, 7, 3, 2, 9, 0, -1, -5]
-    result = insertSort(l)
+    result = insertion_sort(l)
     print(result)
