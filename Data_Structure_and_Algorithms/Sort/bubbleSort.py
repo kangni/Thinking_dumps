@@ -1,16 +1,12 @@
-def bubbleSort(l):
-    exchanges = True
-    pass_num = len(l) - 1
-    while pass_num > 0 and exchanges:
-        exchanges = False
-        for i in range(pass_num):
-            if l[i] > l[i + 1]:
-                exchanges = True
-                l[i], l[i + 1] = l[i + 1], l[i]
-        pass_num -= 1
+# -*- coding: utf-8 -*-
+def bubble_sort(l):
+    for i in range(len(l)-1):
+        for j in range(len(l)-1-i):
+            if l[j] > l[j+1]:
+                l[j], l[j+1] = l[j+1], l[j]
 
+    return l
 
-if __name__ == '__main__':
-    l = [1, 5, 3, 6, 2, 78, 54]
-    result = bubbleSort(l)
-    print(result)
+test_l = [2, 5, 1, 9, 6, 0, -4, -5, 2]
+print(bubble_sort(test_l))
+
