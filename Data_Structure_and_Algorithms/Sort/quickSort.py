@@ -5,6 +5,7 @@ def quick_sort(seq):
         pivot = seq[0]
         lesser = quick_sort([x for x in seq[1:] if x < pivot])
         greater = quick_sort([x for x in seq[1:] if x >= pivot])
+        # 若要去重的话，去掉等于号
         return lesser + [pivot] + greater
 
 
