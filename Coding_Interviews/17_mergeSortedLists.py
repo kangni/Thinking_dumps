@@ -42,5 +42,5 @@ def _merge_sorted_lists(l1, l2, tmp):
     return merge_sorted_lists(l1, l2, tmp)
 
 def merge_sorted_lists(l1, l2):
-    retuen _merge_sorted_lists(l1, l2, [])
+    return _merge_sorted_lists(l1, l2, [])
 '''
