@@ -4,7 +4,7 @@
 # 输入两个链表，找出它们的第一个公共节点
 
 
-class ListNode(object):
+class ListNode:
     def __init__(self, data, next=None):
         self.data = data
         self.next = next
@@ -12,7 +12,7 @@ class ListNode(object):
 
 def find_first_common_node(l1, l2):
     if l1 is None or l2 is None:
-        return False
+        return None
 
     if l1.data == l2.data:
         return l1.data
