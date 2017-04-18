@@ -6,12 +6,11 @@ def BinarySearch(a_list, item):
     while first <= last and not found:
         middle = (first + last) >> 1
         if item < a_list[middle]:
-            last = middle -1
+            last = middle
         elif item > a_list[middle]:
             first = middle + 1
         else:
             return middle
             found = True
 
-    return -1
-        
+    return None
