@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
 # 尾递归
 '''
-def _merge_sorted_lists(l1, l2, tmp):
+def recursion_merge_sorted_lists(l1, l2, tmp):
     if len(l1) == 0 or len(l2) == 0:
         tmp.extend(l1)
         tmp.extend(l2)
@@ -39,8 +39,8 @@ def _merge_sorted_lists(l1, l2, tmp):
         else:
             tmp.append(l2[0])
             del l2[0]
-    return merge_sorted_lists(l1, l2, tmp)
+    return recursion_merge_sorted_lists(l1, l2, tmp)
 
 def merge_sorted_lists(l1, l2):
-    return _merge_sorted_lists(l1, l2, [])
+    return recursion_merge_sorted_lists(l1, l2, [])
 '''
