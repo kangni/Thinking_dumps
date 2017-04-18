@@ -44,3 +44,9 @@ def recursion_merge_sorted_lists(l1, l2, tmp):
 def merge_sorted_lists(l1, l2):
     return recursion_merge_sorted_lists(l1, l2, [])
 '''
+# 简单方法
+'''
+print(sorted(list1+list2))
+
+print(sorted(set(list1+list2))) # 若要去重
+'''
