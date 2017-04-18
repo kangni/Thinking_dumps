@@ -10,5 +10,6 @@
 
 
 class Solution:
-    def replace_blank(self, s):
+    @staticmethod
+    def replace_blank(s):
         return s.replace(" ", "%20")
