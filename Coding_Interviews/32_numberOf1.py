@@ -14,7 +14,7 @@ def number_of_1(n):
     while left_part > 0:
         curr = left_part % 10
         right_part = n % multiplier
-        count += (left_part // 10 + (k < curr)) * multiplier
+        count += (left_part // 10 + (curr > k)) * multiplier
 
         if k == 0 and multiplier > 1:
             count -= multiplier
