@@ -1,14 +1,14 @@
-* 搞掂臥佛[0%]
+* 搞掂臥佛[14%]
 ** TODO 01
-** TODO 02_singleton
-** TODO 03_findInpartiallysortedmatrix
-** TODO 04_replaceblank
-** TODO 05_reverselist
-** TODO 06_constructbinarytree
+** DONE 02_singleton
+** DONE 03_findInpartiallysortedmatrix
+** DONE 04_replaceblank
+** DONE 05_reverselist
+** DONE 06_constructbinarytree
 ** TODO 07_1_queuewithtwostacks
 ** TODO 07_2_stackwithtwoqueues
-** TODO 08_minnumberinrotatearray
-** TODO 09_fibonacci
+** DONE 08_minnumberinrotatearray
+** DONE 09_fibonacci
 ** TODO 10_numberof1inbinary
 ** TODO 11_power
 ** TODO 12_print1tomaxofndigits
