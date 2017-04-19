@@ -10,7 +10,7 @@
 # 最后剩下的数字是3
 
 
-class Queue:
+class Queue(object):
     def __init__(self):
         self.val = []
 
