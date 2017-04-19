@@ -7,6 +7,7 @@
 # 比如把 9 表示成二进制是 1001，有 2 位是 1.
 # 所以输出 2
 
+
 # Way 1
 def number_of_1(n):
     count = 0
@@ -24,14 +25,14 @@ if __name__ == '__main__':
 
 # Way 2
 def number_of_1(n):
-      if n > 0:
-          b_n = bin(n)
-          count = b_n.count('1')
-          print(b_n)
-          return count
-      elif n < 0:
-          b_n = bin(~n)
-          count = 8 - b_n.count('1')
-          return count
-      else:
-          return 8
+    if n > 0:
+        b_n = bin(n)
+        count = b_n.count('1')
+        print(b_n)
+        return count
+    elif n < 0:
+        b_n = bin(~n)
+        count = 8 - b_n.count('1')
+        return count
+    else:
+        return 8
