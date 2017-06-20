@@ -1,6 +1,6 @@
 def quick_sort(seq):
-    if seq == []:
-        return []
+    if len(seq) < 2:
+        return seq
     else:
         pivot = seq[0]
         lesser = quick_sort([x for x in seq[1:] if x < pivot])

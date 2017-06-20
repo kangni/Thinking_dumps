@@ -1,5 +1,5 @@
 def insertion_sort(l):
-    for i in range(1, len(l)):
+    for i in range(len(l)):
         currentvalue = l[i]
         position = i
         while position > 0 and l[position - 1] > currentvalue:
