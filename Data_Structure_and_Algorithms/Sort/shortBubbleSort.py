@@ -8,8 +8,8 @@ def short_bubble_sort(l):
         exchanges = False
         for i in range(pass_num-1):
             if l[i] > l[i + 1]:
-                exchanges = True
                 l[i], l[i + 1] = l[i + 1], l[i]
+                exchanges = True
         pass_num -= 1
 
 
