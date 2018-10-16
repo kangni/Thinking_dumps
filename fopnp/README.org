@@ -1,0 +1,20 @@
+* Foundations of Python Network Programming
+
+** 實驗環境
+
+base 的 Dockerfile 是有一些問題的，列舉如下
+
+#+BEGIN_SRC markdown
+
+避免 invoke-rc.d: policy-rc.d denied execution of start. 錯誤
+
+   sed -i "s/^exit 101$/exit 0/" /usr/sbin/policy-rc.d
+
+避免 TERM is not set, so the dialog frontend is not usable 錯誤
+
+   DEBIAN_FRONTEND=noninteractive
+
+清理
+
+   rm -rf /var/lib/apt/lists/*
+#+END_SRC
