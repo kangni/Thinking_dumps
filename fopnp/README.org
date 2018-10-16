@@ -17,4 +17,16 @@ base 的 Dockerfile 是有一些問題的，列舉如下
 清理
 
    rm -rf /var/lib/apt/lists/*
+
+避免 dnsmasq: setting capabilities failed: Operation not permitted
+參考[[https://github.com/nicolasff/docker-cassandra/pull/9]]
+
+
+避免 dpkg: error processing package dnsmasq (--configure)
+
+   apt-get install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dnsmasq
+
+避免 invoke-rc.d: unknown initscript, /etc/init.d/vsftpd not found.
+
+	touch /etc/init.d/vsftpd
 #+END_SRC
