@@ -11,15 +11,15 @@ cd $(dirname "$0")
 
 if ! echo "$(groups)" | grep -q docker
 then
-    sudo adduser vagrant docker
-    exec newgrp docker < ./launch.sh
+	sudo adduser vagrant docker
+	exec newgrp docker < ./launch.sh
 fi
 
 # Make sure network tools are ready to run.
 
 if [ ! -x /sbin/brctl ]
 then
-    sudo apt-get -y install bridge-utils
+	sudo apt-get -y install bridge-utils
 fi
 sudo mkdir -p /var/run/netns
 sudo modprobe ip_nat_ftp nf_conntrack_ftp
@@ -27,79 +27,79 @@ sudo modprobe ip_nat_ftp nf_conntrack_ftp
 # Tool to start a container.
 
 start_container () {
-    hostname=$1
-    image=$2
-    port=$3
-    container=${hostname%%.*}
+	hostname=$1
+	image=$2
+	port=$3
+	container=${hostname%%.*}
 
-    pid=$(docker inspect -f '{{.State.Pid}}' $container 2>/dev/null || true)
+	pid=$(docker inspect -f '{{.State.Pid}}' $container 2>/dev/null || true)
 
-    if [ "$pid" = "" ]
-    then
-        if [ -n "$port" ]
-        then netopts="--publish=$port:22"
-        else netopts="--net=none"
-        fi
-        docker run --name=$container --hostname=$hostname \
-            --dns=10.1.1.1 --dns-search=example.com "$netopts" \
-            --volume=$(readlink -f ..):/fopnp -d $image
-    elif [ "$pid" = "0" ]
-    then
-        docker start $container  >/dev/null
-    else
-        return
-    fi
+	if [ "$pid" = "" ]
+	then
+		if [ -n "$port" ]
+		then netopts="--publish=$port:22"
+		else netopts="--net=none"
+		fi
+		docker run --name=$container --hostname=$hostname \
+			--dns=10.1.1.1 --dns-search=example.com "$netopts" \
+			--volume=$(readlink -f ..):/fopnp -d $image
+	elif [ "$pid" = "0" ]
+	then
+		docker start $container  >/dev/null
+	else
+		return
+	fi
 
-    pid=$(docker inspect -f '{{.State.Pid}}' $container)
-    sudo rm -f /var/run/netns/$container
-    sudo ln -s /proc/$pid/ns/net /var/run/netns/$container
+	pid=$(docker inspect -f '{{.State.Pid}}' $container)
+	sudo rm -f /var/run/netns/$container
+	sudo ln -s /proc/$pid/ns/net /var/run/netns/$container
 
-    echo Container started: $container
+	echo Container started: $container
 }
 
 # These commands are each a no-op if the command has already run.
 
 start_bridge () {               # args: BRIDGE_NAME
-    sudo brctl addbr $1 &>/dev/null || return
-    sudo ip link set $1 up
-    echo Created bridge: $1
+	sudo brctl addbr $1 &>/dev/null || return
+	sudo ip link set $1 up
+	echo Created bridge: $1
 }
 give_interface_to_container () { # args: OLD_NAME CONTAINER NEW_NAME
-    sudo ip link set $1 netns $2
-    sudo ip netns exec $2 ip link set dev $1 name $3
-    sudo ip netns exec $2 ip link set $3 up
+	sudo ip link set $1 netns $2
+	sudo ip netns exec $2 ip link set dev $1 name $3
+	sudo ip netns exec $2 ip link set $3 up
 }
 create_interface () {
-    #
-    # Given an interface name "www-eth0", create both an interface with
-    # that name and also a peer that is connected to it.  Place the peer
-    # in the container "www" and give it the name "eth0" there.
-    #
-    interface=$1
-    container=${interface%%-*}
-    short_name=${interface##*-}
-    sudo ip link add $interface type veth peer name P &>/dev/null || return
-    give_interface_to_container P $container $short_name
-    echo Created interface: $interface
+	#
+	# Given an interface name "www-eth0", create both an interface with
+	# that name and also a peer that is connected to it.  Place the peer
+	# in the container "www" and give it the name "eth0" there.
+	#
+	interface=$1
+	container=${interface%%-*}
+	short_name=${interface##*-}
+	sudo ip link add $interface type veth peer name P &>/dev/null || return
+	give_interface_to_container P $container $short_name
+	echo Created interface: $interface
 }
 create_point_to_point () {
-    #
-    # Given arguments "backbone eth0 isp eth1", create a pair of peer
-    # interfaces and put one inside the container "backbone" and name it
-    # "eth0" and the other inside of "isp" with the name "eth1".
-    #
-    sudo ip netns exec $1 ip link set $2 up &>/dev/null && return
-    sudo ip link add P type veth peer name Q
-    give_interface_to_container P $1 $2
-    give_interface_to_container Q $3 $4
-    echo Created link between: $1 $3
+	#
+	# Given arguments "backbone eth0 isp eth1", create a pair of peer
+	# interfaces and put one inside the container "backbone" and name it
+	# "eth0" and the other inside of "isp" with the name "eth1".
+	#
+	sudo ip netns exec $1 ip link set $2 up &>/dev/null && return
+	sudo ip link add P type veth peer name Q
+	give_interface_to_container P $1 $2
+	give_interface_to_container Q $3 $4
+	echo Created link between: $1 $3
 }
 bridge_add_interface () {
-    bridge=$1
-    interface=$2
-    sudo brctl addif $bridge $interface &>/dev/null || return
-    sudo ip link set dev $interface up
-    echo Bridged interface: $interface
+	bridge=$1
+	interface=$2
+	sudo brctl addif $bridge $interface &>/dev/null || return
+	sudo ip link set dev $interface up
+	echo Bridged interface: $interface
 }
 
 # Build the playground.
@@ -189,18 +189,18 @@ sudo ip netns exec modemB ip addr add 10.25.1.66/16 dev eth0
 
 for modem in modemA modemB
 do
-    sudo ip netns exec $modem ip addr add 192.168.1.1/24 dev eth1
-    sudo ip netns exec $modem ip route add default via 10.25.1.1
-    sudo ip netns exec $modem iptables --table nat \
-        --append POSTROUTING --out-interface eth0 -j MASQUERADE
+	sudo ip netns exec $modem ip addr add 192.168.1.1/24 dev eth1
+	sudo ip netns exec $modem ip route add default via 10.25.1.1
+	sudo ip netns exec $modem iptables --table nat \
+		--append POSTROUTING --out-interface eth0 -j MASQUERADE
 done
 
 for host in h1 h2 h3 h4
 do
-    n=${host#?}
-    sudo ip netns exec $host ip route del default
-    sudo ip netns exec $host ip addr add 192.168.1.1$n/24 dev eth1
-    sudo ip netns exec $host ip route add default via 192.168.1.1
+	n=${host#?}
+	sudo ip netns exec $host ip route del default
+	sudo ip netns exec $host ip addr add 192.168.1.1$n/24 dev eth1
+	sudo ip netns exec $host ip route add default via 192.168.1.1
 done
 
 # Configure the 10.130.1.* network that the example.com machines share.
@@ -217,6 +217,6 @@ cat <<'EOT'
 
 Playground set up successfully! To enter, now run the command:
 
-    ssh h1
+	ssh h1
 
 EOT
