@@ -2,7 +2,7 @@
 
 ** 實驗環境
 
-base 的 Dockerfile 是有一些問題的，列舉如下
+直接提供的 Dockerfile 是有一些問題的，列舉如下
 
 #+BEGIN_SRC markdown
 
